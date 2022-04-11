@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --button: #06ADEF;
+  --button-hover: #07A2DF;
+  --gray: #737373;
+  --header: #F1F6FF;
+}
