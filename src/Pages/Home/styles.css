@@ -1,0 +1,41 @@
+.navigation-tabs {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    gap: 50px;
+}
+
+.navigation-link {
+    font-size: 18px;
+    color: var(--gray);
+}
+
+.navigation-link:hover {
+    color: var(--black);
+}
+
+.container-menu {
+    width: 100%;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-info {
+    width: 30%;
+}
+
+.container-menu img {
+    width: 576px;
+}
+
+.container-info img {
+    width: 250px;
+}
+.container-info p {
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 50px;
+}
