@@ -13,7 +13,7 @@ export default function Home() {
       <>
         <Header/>
         <div className="navigation-tabs">
-          <Link to="/" className="navigation-link">Realizar agendamento</Link>
+          <Link to="/cadastrar-agendamento" className="navigation-link">Realizar agendamento</Link>
           <Link to="/" className="navigation-link">Agendamentos</Link>
         </div>
         <div className="container-menu">
@@ -22,7 +22,7 @@ export default function Home() {
             <p>
               Aquele pedacinho de plástico com uma agulha representa muito mais do que uma picada, mas a esperança por dias melhores.
             </p>
-            <Button content={<>Agendar vacinação</>}/>
+            <Button link={"/cadastrar-agendamento"} content={"Agendar vacinação"}/>
           </div>
           <img src={Image2} alt="Ilustração de uma criança sendo vacinada"/>
         </div>
