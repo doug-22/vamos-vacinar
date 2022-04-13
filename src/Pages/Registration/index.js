@@ -10,7 +10,7 @@ import Form from "../../Components/Form";
 
 export default function Registration() {
 
-    const actualLocation = useLocation();
+    const currentLocation = useLocation();
 
     const handleSubmit = (values) => {
         alert(JSON.stringify(values));
@@ -26,7 +26,7 @@ export default function Registration() {
     return (
         <>
             <Header />
-            <NavigationTabs location={actualLocation.pathname} />
+            <NavigationTabs location={currentLocation.pathname} />
             <div className="box-form">
                 <img src={Image} alt="Imagem homem adulto sendo vacinado"/>
                 <div>
