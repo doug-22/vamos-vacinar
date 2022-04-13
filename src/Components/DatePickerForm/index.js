@@ -12,7 +12,7 @@ export default function DatePickerForm({name, placeholder}) {
         const { value } = field
         return (
           <DatePicker
-            id="birthDate"
+            id={name}
             selected={value}
             onChange={date => setFieldValue(name, date)}
             placeholderText={placeholder}
