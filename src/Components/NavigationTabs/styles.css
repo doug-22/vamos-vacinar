@@ -1,0 +1,16 @@
+.navigation-tabs {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    gap: 50px;
+}
+
+.navigation-link {
+    font-size: 18px;
+    color: var(--gray);
+}
+
+.navigation-link:hover {
+    color: var(--black);
+}

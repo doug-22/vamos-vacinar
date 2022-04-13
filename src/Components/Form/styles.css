@@ -1,0 +1,36 @@
+.container-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-form img {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.container-input {
+    border: solid 1px var(--gray);
+    border-radius: 15px;
+    padding: 40px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end !important;
+    gap: 15px;
+}
+.content-input {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.input-select {
+    width: 167.33px;
+}
+
+.message-error {
+    font-size: 15px;
+    color: red;
+}

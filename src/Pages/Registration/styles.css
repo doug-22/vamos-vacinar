@@ -1,0 +1,13 @@
+.box-form {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.box-form img {
+    width: 400px;
+}
+
+.box-form div {
+    margin: auto 0;
+}
