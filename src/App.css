@@ -13,6 +13,11 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  outline: none;
+}
+
 button,
 a {
   cursor: pointer;
@@ -25,4 +30,8 @@ a {
   --button-hover: #07A2DF;
   --gray: #737373;
   --header: #F1F6FF;
+}
+
+.react-datepicker-wrapper {
+  width: inherit !important;
 }
