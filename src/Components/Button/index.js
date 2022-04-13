@@ -4,8 +4,6 @@ import "./styles.css";
 
 export default function Button({link, content}) {
     return(
-        <div className="button">
-            <Link to={link}>{content}</Link>
-        </div>
+      <Link to={link} className="button">{content}</Link>
     );
 }

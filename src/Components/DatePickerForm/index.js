@@ -5,6 +5,14 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function DatePickerForm({name, placeholder}) {
+
+  const getDateTomorrow = () => {
+    let currentDate = new Date();
+    let tomorrowDate = new Date();
+    tomorrowDate.setDate(currentDate.getDate() + 1)
+    return tomorrowDate;
+  }
+
   return (
     <Field name={name}>
       {({form, field}) => {
@@ -17,6 +25,7 @@ export default function DatePickerForm({name, placeholder}) {
             onChange={date => setFieldValue(name, date)}
             placeholderText={placeholder}
             dateFormat="dd/MM/yyyy"
+            minDate={getDateTomorrow()}
             />
         );
       }}
