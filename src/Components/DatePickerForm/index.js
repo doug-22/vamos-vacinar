@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function DatePickerForm({name, placeholder}) {
+export default function DatePickerForm({name, placeholder, ageCalendar}) {
 
   const getDateTomorrow = () => {
     let currentDate = new Date();
@@ -25,7 +25,7 @@ export default function DatePickerForm({name, placeholder}) {
             onChange={date => setFieldValue(name, date)}
             placeholderText={placeholder}
             dateFormat="dd/MM/yyyy"
-            minDate={getDateTomorrow()}
+            minDate={ !ageCalendar && getDateTomorrow()}
             />
         );
       }}
