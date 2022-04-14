@@ -27,12 +27,12 @@ export default function Form({handleSubmit, initialValues}) {
               <ErrorMessage className="message-error" component="span" name="name"/>
               <div className="content-input">
                 <p>Data de nascimento:</p>
-                <DatePickerForm name={"birthDate"} placeholder={"Selecione a data"}/>
+                <DatePickerForm name={"birthDate"} placeholder={"Selecione a data"} ageCalendar={true}/>
               </div>
               <ErrorMessage className="message-error" component="span" name="birthDate" />
               <div className="content-input">
                 <p>Agendar vacina para o dia:</p>
-                <DatePickerForm name={"dateAppointment"} placeholder={"Selecione o dia"}/>
+                <DatePickerForm name={"dateAppointment"} placeholder={"Selecione o dia"} ageCalendar={false}/>
               </div>
               <ErrorMessage className="message-error" component="span" name="dateAppointment" />
               <div className="content-input">
