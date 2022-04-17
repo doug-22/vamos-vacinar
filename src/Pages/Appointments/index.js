@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Formik, Form as FormFormik, Field } from "formik";
+import Api from "../../Services/api";
 
 import Header from "../../Components/Header";
 import NavigationTabs from "../../Components/NavigationTabs";
@@ -10,6 +12,26 @@ import Image from "../../Assets/Image3.jpg";
 export default function Appointments() {
 
   const currentLocation = useLocation();
+  const [listDates, setListDates] = useState([]);
+  const [response, setResponse] = useState([]);
+
+  useEffect(() => {
+    const loadApi = async () => {
+      let list = await Api.get("/api/agendamento");
+      setListDates(list.data.dates);
+    }
+
+    loadApi();
+  }, [])
+
+  const handleResults = async (dataSelect) => {
+    let list = await Api.get(`/api/agendamento?dia=${dataSelect.date}`)
+    setResponse(list.data.attendanceData);
+  }
+
+  const initialValues = {
+    date: ""
+  }
 
   return (
       <>
@@ -18,82 +40,43 @@ export default function Appointments() {
         <div className="box-appointments">
           <div className="search">
             <div>
-              <label>Selecione a data: </label>
-              <input/>
+              <Formik
+                initialValues={initialValues}
+                onSubmit={handleResults}
+              >
+                <FormFormik>
+                <label>Selecione a data: </label>
+                <Field as="select" name="date" className="input-select">
+                  <option value="value0">Selecione</option>
+                  {listDates.length !== 0 &&
+                    listDates.map((date, key) => (
+                      <option key={key} value={`${date}`}>{date}</option>
+                    ))
+                  }
+                </Field>
+                <div className="search-button">
+                  <button className="button" type="submit">Listar agendamentos</button>
+                </div>
+                </FormFormik>
+              </Formik>
             </div>
             <img src={Image} alt="Imagem de um homem sendo vacinado" />
           </div>
           <div className="search-results">
-            <div className="results">
-              <p>07:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>08:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>09:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>10:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>11:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>13:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>14:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>15:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>16:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
-            <div className="results">
-              <p>17:00 hrs</p>
-              <div>
-                <p>Douglas Aguiar Oliveira</p>
-                <p>Douglas Aguiar Oliveira</p>
-              </div>
-            </div>
+            {response &&
+              response.map((attendance, key) => (
+                <div key={key} className="results">
+                  <p>{attendance.time}</p>
+                  <p>{attendance.name}</p>
+                  {attendance.vaccinated ?
+                    <p className="vaccinated">Vacinou!</p>
+                  :
+                    <p className="not-vaccinated">Não vacinou!</p>
+                  }
+                  
+                </div>
+              ))
+            }
           </div>
         </div>
       </>
