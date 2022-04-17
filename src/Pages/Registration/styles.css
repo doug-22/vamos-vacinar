@@ -11,3 +11,22 @@
 .box-form div {
     margin: auto 0;
 }
+
+.box-result-appointment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-success {
+    color: var(--green);
+}
+
+.message-not-success {
+    color: var(--red);
+}
+
+.box-result-appointment img{
+    width: 50px;
+}
