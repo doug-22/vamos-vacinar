@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Registration from "./Pages/Registration";
 import Appointments from "./Pages/Appointments";
+import Management from "./Pages/Management";
 
 export default function App() {
 
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cadastrar-agendamento" element={<Registration />}/>
         <Route path="/agendamentos" element={<Appointments />}/>
+        <Route path="/gerenciar-agendamentos" element={<Management />}/>
       </Routes>
     </BrowserRouter>
   );
