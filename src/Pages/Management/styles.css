@@ -1,0 +1,26 @@
+.container-filters {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-input {
+  margin-bottom: 10px;
+}
+
+.content-result-search {
+  display: flex;
+}
+
+.content-titles {
+  width: 50%;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.content-person {
+  width: 50%;
+}
