@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../Services/api";
+import Axios from "axios";
 import { useLocation } from "react-router-dom";
 import { Formik, Form as FormFormik, Field } from "formik";
 
@@ -31,14 +32,18 @@ export default function Management() {
 
   const handleSelected = (data) => {
     response.map((value) => {
-      if(value.name === data.name){
+      if(value.id === data.identifier){
         setSelected(value)
       }
     });
   }
 
   const handleVaccination = (id) => {
-    console.log(id)
+    Axios.put(`http://localhost:8080/api/editar/${id}`, {
+      vaccinated: true
+    }).then((response) => {
+      setSelected(response.data);
+    });
   }
 
   const initialValues = {
@@ -69,11 +74,11 @@ export default function Management() {
           </div>
           <div className="content-input">
             <label>Selecione a pessoa: </label>
-            <Field as="select" name="name" className="input-select">
+            <Field as="select" name="identifier" className="input-select">
               <option value="value0">Selecione</option>
               {response &&
                 response.map((date, key) => (
-                  <option key={key} value={`${date.name}`}>{date.name}</option>
+                  <option key={key} value={`${date.id}`}>{date.name}</option>
                 ))
               }
             </Field>
@@ -102,13 +107,17 @@ export default function Management() {
                 <p>{selected.name}</p>
                 <p>{selected.birthDate}</p>
                 {selected.vaccinated ?
-                  <p className="vaccinated">Vacinado</p>
-                :
+                  <>
+                    <p className="vaccinated">Vacinado</p>
+                    <button style={{marginTop: "18px"}} className="button button-disabled" onClick={() => handleVaccination(selected.id)} disabled={true}>Sim</button>
+                  </>
+                  :
+                  <>
                   <p className="not-vaccinated">Não vacinado</p>
+                  <button style={{marginTop: "18px"}} className="button" onClick={() => handleVaccination(selected.id)}>Sim</button>
+                  </>
                 }
-                <button style={{marginTop: "18px"}} className="button" onClick={() => handleVaccination(selected.id)}>Sim</button>
               </div>
-              
             </>
           }
         </div>

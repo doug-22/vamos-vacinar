@@ -24,3 +24,11 @@
 .content-person {
   width: 50%;
 }
+
+.button-disabled {
+  background-color: var(--gray);
+}
+
+.button-disabled:hover {
+  background-color: var(--gray);
+}
