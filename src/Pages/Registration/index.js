@@ -38,7 +38,7 @@ export default function Registration() {
     setRegistered(registered)
   }
   if(registered) {
-    setTimeout(redirectAppointmentsPage, 1000*3);
+    setTimeout(redirectAppointmentsPage, 1000*1.5);
   }
 
   return (
