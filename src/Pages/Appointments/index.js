@@ -67,7 +67,7 @@ export default function Appointments() {
               response.map((attendance, key) => (
                 <div key={key} className="results">
                   <p>{attendance.time}</p>
-                  <p>{attendance.name}</p>
+                  <p style={{width: "250px"}}>{attendance.name}</p>
                   {attendance.vaccinated ?
                     <p className="vaccinated">Vacinou!</p>
                   :
