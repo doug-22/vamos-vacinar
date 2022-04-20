@@ -2,7 +2,12 @@
     height: 60px;
     display: flex;
     align-items: center;
-    margin-left: 50px;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+.navigation-tabs div {
+    display: flex;
     gap: 50px;
 }
 
