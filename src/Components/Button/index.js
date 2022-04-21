@@ -4,6 +4,6 @@ import "./styles.css";
 
 export default function Button({link, content}) {
     return(
-      <Link to={link} className="button">{content}</Link>
+      <Link data-testid="btn-to-registration" to={link} className="button">{content}</Link>
     );
 }

@@ -16,6 +16,7 @@ export default function Home() {
         <div className="container-menu">
           <div className="container-info">
             <img src={Image1} alt="Título Vacinação COVID-19"/>
+            <h1 style={{fontSize: "30px"}}>Bem Vindo!</h1>
             <p>
               Aquele pedacinho de plástico com uma agulha representa muito mais do que uma picada, mas a esperança por dias melhores.
             </p>
