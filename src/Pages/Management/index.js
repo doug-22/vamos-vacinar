@@ -36,12 +36,12 @@ export default function Management() {
       <Header />
       <NavigationTabs location={currentLocation.pathname} />
       <div className="container-buttons">
-        <div className="content-button" onClick={() => handleTypeModal(1)}>
-          <img src={Image1} alt="Imagem di botão para página de gerenciar vacinação" />
+        <div data-testid="btn-modal-vaccination" className="content-button" onClick={() => handleTypeModal(1)}>
+          <img src={Image1} alt="Imagem de botão para página de gerenciar vacinação" />
           <p>Gerenciar vacinação</p>
         </div>
-        <div className="content-button" onClick={() => handleTypeModal(2)}>
-          <img src={Image2} alt="Imagem di botão para página de gerenciar agendamentos" />
+        <div data-testid="btn-modal-management" className="content-button" onClick={() => handleTypeModal(2)}>
+          <img src={Image2} alt="Imagem de botão para página de gerenciar agendamentos" />
           <p>Gerenciar agendamentos</p>
         </div>
         {modalVisible ? <Modal typeModal={typeModal} listDates={listDates} onClose={() => setModalVisible(false)}/> : null}
