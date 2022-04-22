@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../Services/api";
 import { useLocation } from "react-router-dom";
+import { documentTitle } from "../../Components/documentTitle";
 
 import "./styles.css";
 import Image1 from "../../Assets/seringa.jpg";
@@ -11,6 +12,8 @@ import NavigationTabs from "../../Components/NavigationTabs";
 import Modal from "../../Components/Modal";
 
 export default function Management() {
+
+  documentTitle(" | Gerenciar")
 
   const currentLocation = useLocation();
   const [listDates, setListDates] = useState([]);

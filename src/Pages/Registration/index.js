@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Axios from "axios";
+import { documentTitle } from "../../Components/documentTitle";
 
 import "./styles.css";
 import Image from "../../Assets/Image2.jpg";
@@ -12,6 +13,8 @@ import NavigationTabs from "../../Components/NavigationTabs";
 import Form from "../../Components/Form";
 
 export default function Registration() {
+
+  documentTitle(" | Cadastro")
 
   const currentLocation = useLocation();
   const navigate = useNavigate();

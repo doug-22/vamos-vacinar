@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Formik, Form as FormFormik, Field } from "formik";
 import Api from "../../Services/api";
+import { documentTitle } from "../../Components/documentTitle";
 
 import Header from "../../Components/Header";
 import NavigationTabs from "../../Components/NavigationTabs";
@@ -10,6 +11,8 @@ import "./styles.css";
 import Image from "../../Assets/Image3.jpg";
 
 export default function Appointments() {
+
+  documentTitle(" | Agendamentos")
 
   const currentLocation = useLocation();
   const [listDates, setListDates] = useState([]);
