@@ -10,8 +10,8 @@ export default function Tabs({location}) {
             <Link to="/cadastrar-agendamento" className={location === "/cadastrar-agendamento" ? "navigation-link-active" : "navigation-link"}>Realizar agendamento</Link>
             <Link to="/agendamentos" className={location === "/agendamentos" ? "navigation-link-active" : "navigation-link"}>Agendamentos</Link>
           </div>
-          {(location === "/agendamentos" || location === "/gerenciar-agendamentos") &&
-            <Link to="/gerenciar-agendamentos" className={location === "/gerenciar-agendamentos" ? "navigation-link-active" : "navigation-link"}>Gerenciar agendamentos</Link>
+          {(location === "/agendamentos" || location === "/agendamentos/gerenciar") &&
+            <Link to="/agendamentos/gerenciar" className={location === "/agendamentos/gerenciar" ? "navigation-link-active" : "navigation-link"}>Gerenciar agendamentos</Link>
           }
         </div>
     );

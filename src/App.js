@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cadastrar-agendamento" element={<Registration />}/>
         <Route path="/agendamentos" element={<Appointments />}/>
-        <Route path="/gerenciar-agendamentos" element={<Management />}/>
+        <Route path="/agendamentos/gerenciar" element={<Management />}/>
       </Routes>
     </BrowserRouter>
   );
