@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../Services/api";
-import { documentTitle } from "../../Utils/documentTitle";
+import utilFunctions from "../../Utils/util.functions";
 
 import "./styles.css";
 import Image1 from "../../Assets/seringa.jpg";
@@ -9,8 +9,6 @@ import Image2 from "../../Assets/prancheta.jpg";
 import Modal from "../../Components/Modal";
 
 export default function Management() {
-
-  documentTitle(" | Gerenciar")
 
   const [listDates, setListDates] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -21,15 +19,17 @@ export default function Management() {
       let list = await Api.getListAppointments();
       setListDates(list)
     }
-
+    
     loadApi();
   }, []);
-
+  
   const handleTypeModal = (typeModal) => {
     setTypeModal(typeModal);
     setModalVisible(true);
   }
 
+  utilFunctions.documentTitle(" | Gerenciar");
+  
   return (
     <>
       <div className="container-buttons">

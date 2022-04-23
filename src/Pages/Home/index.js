@@ -1,5 +1,5 @@
 import React from "react";
-import { documentTitle } from "../../Utils/documentTitle";
+import utilFunctions from "../../Utils/util.functions";
 
 import "./styles.css";
 import Image1 from "../../Assets/Title.svg";
@@ -9,7 +9,7 @@ import Button from "../../Components/Button";
 
 export default function Home() {
 
-  documentTitle("");
+  utilFunctions.documentTitle("");
 
   return(
     <>

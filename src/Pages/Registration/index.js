@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Api from "../../Services/api";
-import { documentTitle } from "../../Utils/documentTitle";
+import utilFunctions from "../../Utils/util.functions";
 
 import "./styles.css";
 import Image from "../../Assets/Image2.jpg";
@@ -12,13 +12,11 @@ import Form from "../../Components/Form";
 
 export default function Registration() {
 
-  documentTitle(" | Cadastro")
-
   const navigate = useNavigate();
   const [registered, setRegistered] = useState();
-
+  
   const handleSubmit = async (values) => {
-    let response = await Api.postRegister(values)
+    let response = await Api.postRegister(values);
     setRegistered(response);
   }
   const initialValues = {
@@ -28,15 +26,17 @@ export default function Registration() {
     time: "",
     vaccinated: false
   };
-
+  
   const redirectAppointmentsPage = () => {
-    navigate("/agendamentos")
-    setRegistered(registered)
+    navigate("/agendamentos");
+    setRegistered(registered);
   }
   if(registered) {
     setTimeout(redirectAppointmentsPage, 1000*1.5);
   }
 
+  utilFunctions.documentTitle(" | Cadastro");
+  
   return (
     <>
       <div className="box-form">

@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form as FormFormik, Field } from "formik";
 import Api from "../../Services/api";
-import { documentTitle } from "../../Utils/documentTitle";
+import utilFunctions from "../../Utils/util.functions";
 
 import "./styles.css";
 import Image from "../../Assets/Image3.jpg";
 
 export default function Appointments() {
-
-  documentTitle(" | Agendamentos")
-
+  
   const [listDates, setListDates] = useState([]);
   const [response, setResponse] = useState([]);
-
+  
   useEffect(() => {
     const loadApi = async () => {
       let list = await Api.getListAppointments();
       setListDates(list)
     }
-
+    
     loadApi();
   }, [])
-
+  
   const handleResults = async (dataSelect) => {
     let list = await Api.getListAppointments(dataSelect.date);
     setResponse(list.attendanceData);
   }
-
+  
   const initialValues = {
     date: ""
   }
-
+  
+  utilFunctions.documentTitle(" | Agendamentos");
+  
   return (
       <>
         <div className="box-appointments">
