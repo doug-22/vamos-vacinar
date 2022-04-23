@@ -62,12 +62,12 @@ export default function Form({handleSubmit, initialValues}) {
           <div className="container-form">
             <img src={TitleForm} alt="Realizar agendamento"/>
             <div className="container-input">
-              <div className="content-input">
+              <div className="content-input-form">
                 <p>Seu nome:</p>
                 <Field name="name" placeholder="Nome" type="text"/>
               </div>
               <ErrorMessage className="message-error" component="span" name="name"/>
-              <div className="content-input">
+              <div className="content-input-form">
                 <p>Data de nascimento:</p>
                 <Field name="birthDate">
                   {({form, field}) => {
@@ -86,7 +86,7 @@ export default function Form({handleSubmit, initialValues}) {
                 </Field>
               </div>
               <ErrorMessage className="message-error" component="span" name="birthDate" />
-              <div className="content-input">
+              <div className="content-input-form">
                 <p>Agendar vacina para o dia:</p>
                 <Field name="dateAppointment">
                   {({form, field}) => {
@@ -107,7 +107,7 @@ export default function Form({handleSubmit, initialValues}) {
                 </Field>
               </div>
               <ErrorMessage className="message-error" component="span" name="dateAppointment" />
-              <div className="content-input">
+              <div className="content-input-form">
                 <p>Qual horário:</p>
                 <Field as="select" name="time" className="input-select">
                   <option value="---">---</option>

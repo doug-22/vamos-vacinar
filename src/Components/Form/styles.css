@@ -1,7 +1,15 @@
+.container-form,
+.container-input,
+.content-input-form {
+    display: flex;
+}
+
+.container-form,
+.container-input {
+    flex-direction: column;
+}
 .container-form {
     width: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -15,13 +23,10 @@
     border-radius: 15px;
     padding: 35px 25px;
 
-    display: flex;
-    flex-direction: column;
     align-items: flex-end !important;
     gap: 10px;
 }
-.content-input {
-    display: flex;
+.content-input-form {
     justify-content: flex-end;
     gap: 10px;
 }
@@ -33,4 +38,14 @@
 .message-error {
     font-size: 15px;
     color: var(--red);
+}
+
+@media (max-width: 900px) {
+    .container-input {
+        padding: 20px 10px;
+    }
+    .content-input-form p {
+        font-size: 15px;
+        font-weight: bold;
+    }
 }
