@@ -59,10 +59,15 @@ export default function Appointments() {
             <img src={Image} alt="Imagem de um homem sendo vacinado" />
           </div>
           <div className="search-results">
+            <div className="results">
+              <p style={{fontWeight: "bold"}}>Horário</p>
+              <p style={{fontWeight: "bold", width: "250px"}}>Nome</p>
+              <p style={{fontWeight: "bold"}}>Situação</p>
+            </div>
             {response &&
               response.map((attendance, key) => (
                 <div key={key} className="results">
-                  <p>{attendance.time}</p>
+                  <p>{attendance.time}h</p>
                   <p style={{width: "250px"}}>{attendance.name}</p>
                   {attendance.vaccinated ?
                     <p className="vaccinated">Vacinou!</p>
