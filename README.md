@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="https://doug-22.github.io/assets/assets/projetos/Logo.png" alt="Logo">
+  <h3 align="center">Vamos Vacinar</h3>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- TABLE OF CONTENTS -->
+# :card_file_box: Tabela de Conteúdos
 
-## Available Scripts
+* [Sobre o Projeto](#book-sobre-o-projeto)
+  * [Layout](#art-layout)
+  * [Tecnologias](#computer-tecnologias)
+  * [Recursos](#sparkles-recursos)
+* [Instalação Front-end](#lipstick-instalação-front-end)
+  * [Pré-requisitos](#construction-pré-requisitos)
+  * [Instalando Dependências](#construction-instalando-dependências)
+  * [Rodando o Front-end](#arrow_forward-rodando-o-front-end)
+* [Autor](#man_technologist-autor)
 
-In the project directory, you can run:
+## :book: Sobre o Projeto
 
-### `yarn start`
+Vamos Vacinar é um projeto criado como parte da avaliação final do Programa Trainee [Pitang](https://www.pitang.com/) 2022 em conjunto com a [Qualiti Learning Experience.](https://qualiti.app.toolzz.com.br/qualiti) O objetivo do projeto é criar um sistema de agendamento de vacinação.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="center">
+  <img src="https://doug-22.github.io/assets/assets/projetos/vamos-vacinar.png" width="50%" alt="Landing page" /> 
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### :art: Layout
 
-### `yarn test`
+Você pode encontrar o layout criado por mim mesmo do projeto no link abaixo (A versão final em produção pode estar com um layout um pouco diferente):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Desktop](https://www.figma.com/file/FAwpUYTJiStRzp96uQSgLO/vamos-vacinar%3F?node-id=0%3A1)
 
-### `yarn build`
+🚨 Você precisa ter uma conta no  [Figma](https://www.figma.com) para acessar aos layouts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### :computer: Tecnologias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [React](https://pt-br.reactjs.org/)
+* [Node.js](https://nodejs.org/en/)
+* [Formik](https://formik.org/docs/overview)
+* [React DatePicker](https://reactdatepicker.com/)
+* [Yup](https://www.npmjs.com/package/yup)
+* [React Router Dom](https://reactrouter.com/docs/en/v6/getting-started/overview)
+* [Yarn](https://yarnpkg.com)
+* [Axios](https://www.npmjs.com/package/axios)
+* [Testing Library](https://testing-library.com/docs/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### :sparkles: Recursos
 
-### `yarn eject`
+  - [x] Versão Desktop
+  - [x] Versão para Celular (A resposividade foi tratada para algumas resoluções)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## :lipstick: Instalação Front-End
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### :construction: Pré-requisitos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone o repositório deste projeto:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+$ git clone https://github.com/doug-22/vamos-vacinar.git
 
-## Learn More
+#Entre na pasta vamos-vacinar:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+$ cd vamos-vacinar
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🚨 Se você não possuir o git em sua máquina, instale [aqui](https://git-scm.com/downloads).
 
-### Code Splitting
+### :construction: Instalando Dependências
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Após entrar na pasta do projeto `vamos-vacinar` rode o comando:
 
-### Analyzing the Bundle Size
+```bash
+#Instale as dependências com o seguinte comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+$ yarn install
+```
 
-### Making a Progressive Web App
+### :arrow_forward: Rodando o Front-end
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Rode o seguinte comando para ver a aplicação:
 
-### Advanced Configuration
+```bash
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+A aplicação estará disponível em `http://localhost:3000/`.
 
-### Deployment
+🚨 Lembre de iniciar o back-end!
+Você pode encontrá-lo clicando [aqui](https://github.com/doug-22/vamos-vacinar-backend).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ‍:man_technologist: Autor
 
-### `yarn build` fails to minify
+<p align="center">
+  <a href="https://github.com/doug-22"><img src="https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/doug-22" alt="Github" /></a>
+  <a href="https://www.linkedin.com/in/douglas-oliveira-dev/"><img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/douglas-oliveira-dev/" alt="LinkendIn" /></a>
+  <a href="mailto:douglas.aguiar410@gmail.com"><img src="https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:douglas.aguiar410@gmail" alt="Gmail" /></a>
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">Desenvolvido por Douglas Oliveira</p>
