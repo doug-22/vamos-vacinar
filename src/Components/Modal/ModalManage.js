@@ -26,13 +26,16 @@ export default function ModalManage() {
     if(month.length < 2) month = "0" + month;
 
     let dateDelete = [day, month, year].join("-");
-    await Api.delete(`/api/deletar_agendamentos?dia=${dateDelete}`)
-      .then(response => {
-        setMessage(!response.data.error)
-      })
-      .catch(error => {
-        setMessage(!error.response.data.error)
-      })
+    if(window.confirm(`Você tem certeza que deseja apagar os agendamentos do dia ${dateDelete} do banco de dados?`)){
+      await Api.delete(`/api/deletar_agendamentos?dia=${dateDelete}`)
+        .then(response => {
+          setMessage(!response.data.error)
+        })
+        .catch(error => {
+          setMessage(!error.response.data.error)
+        })
+
+    }
 
   }
 
