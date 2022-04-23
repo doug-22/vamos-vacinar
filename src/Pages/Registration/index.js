@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Axios from "axios";
 import { documentTitle } from "../../Components/documentTitle";
 
@@ -8,15 +8,12 @@ import Image from "../../Assets/Image2.jpg";
 import imageSuccess from "../../Assets/success.jpg";
 import imageNotSuccess from "../../Assets/not-success.jpg";
 
-import Header from "../../Components/Header";
-import NavigationTabs from "../../Components/NavigationTabs";
 import Form from "../../Components/Form";
 
 export default function Registration() {
 
   documentTitle(" | Cadastro")
 
-  const currentLocation = useLocation();
   const navigate = useNavigate();
   const [registered, setRegistered] = useState();
 
@@ -46,8 +43,6 @@ export default function Registration() {
 
   return (
     <>
-      <Header />
-      <NavigationTabs location={currentLocation.pathname} />
       <div className="box-form">
         <img src={Image} alt="Imagem homem adulto sendo vacinado"/>
         <div>

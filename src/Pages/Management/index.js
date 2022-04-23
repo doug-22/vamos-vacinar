@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Api from "../../Services/api";
-import { useLocation } from "react-router-dom";
 import { documentTitle } from "../../Components/documentTitle";
 
 import "./styles.css";
 import Image1 from "../../Assets/seringa.jpg";
 import Image2 from "../../Assets/prancheta.jpg";
 
-import Header from "../../Components/Header";
-import NavigationTabs from "../../Components/NavigationTabs";
 import Modal from "../../Components/Modal";
 
 export default function Management() {
 
   documentTitle(" | Gerenciar")
 
-  const currentLocation = useLocation();
   const [listDates, setListDates] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [typeModal, setTypeModal] = useState();
@@ -36,8 +32,6 @@ export default function Management() {
 
   return (
     <>
-      <Header />
-      <NavigationTabs location={currentLocation.pathname} />
       <div className="container-buttons">
         <div data-testid="btn-modal-vaccination" className="content-button" onClick={() => handleTypeModal(1)}>
           <img src={Image1} alt="Imagem de botão para página de gerenciar vacinação" />
