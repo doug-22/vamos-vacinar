@@ -40,7 +40,7 @@
 
 .vaccinated,
 .not-vaccinated {
-    width: 60px;
+    width: 100px;
     font-weight: bold;
 }
 
@@ -86,5 +86,10 @@
 
     .results p:nth-child(2){
         width: 180px !important;
+    }
+
+    .vaccinated,
+    .not-vaccinated {
+        width: 60px;
     }
 }
