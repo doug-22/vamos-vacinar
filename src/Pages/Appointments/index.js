@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form as FormFormik, Field } from "formik";
 import Api from "../../Services/api";
-import { documentTitle } from "../../Components/documentTitle";
+import { documentTitle } from "../../Utils/documentTitle";
 
 import "./styles.css";
 import Image from "../../Assets/Image3.jpg";

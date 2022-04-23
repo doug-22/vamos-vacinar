@@ -1,5 +1,5 @@
 import React from "react";
-import { documentTitle } from "../../Components/documentTitle";
+import { documentTitle } from "../../Utils/documentTitle";
 
 import "./styles.css";
 import Image1 from "../../Assets/Title.svg";

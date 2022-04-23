@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
-import { documentTitle } from "../../Components/documentTitle";
+import { documentTitle } from "../../Utils/documentTitle";
 
 import "./styles.css";
 import Image from "../../Assets/Image2.jpg";
