@@ -45,7 +45,7 @@ export default function Registration() {
     <>
       <div className="box-form">
         <img src={Image} alt="Imagem homem adulto sendo vacinado"/>
-        <div>
+        <div className="content-form">
           <Form handleSubmit={handleSubmit} initialValues={initialValues} />
           {registered &&
             <div className="box-result-appointment">
