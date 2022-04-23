@@ -1,42 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Formik, Form as FormFormik, Field } from "formik";
 import Api from "../../Services/api";
-
-import Header from "../../Components/Header";
-import NavigationTabs from "../../Components/NavigationTabs";
+import utilFunctions from "../../Utils/util.functions";
 
 import "./styles.css";
 import Image from "../../Assets/Image3.jpg";
 
 export default function Appointments() {
-
-  const currentLocation = useLocation();
+  
   const [listDates, setListDates] = useState([]);
   const [response, setResponse] = useState([]);
-
+  
   useEffect(() => {
     const loadApi = async () => {
-      let list = await Api.get("/api/agendamento");
-      setListDates(list.data.dates);
+      let list = await Api.getListAppointments();
+      setListDates(list)
     }
-
+    
     loadApi();
   }, [])
-
+  
   const handleResults = async (dataSelect) => {
-    let list = await Api.get(`/api/agendamento?dia=${dataSelect.date}`)
-    setResponse(list.data.attendanceData);
+    let list = await Api.getListAppointments(dataSelect.date);
+    setResponse(list.attendanceData);
   }
-
+  
   const initialValues = {
     date: ""
   }
-
+  
+  utilFunctions.documentTitle(" | Agendamentos");
+  
   return (
       <>
-        <Header />
-        <NavigationTabs location={currentLocation.pathname}/>
         <div className="box-appointments">
           <div className="search">
             <div>
@@ -63,10 +59,15 @@ export default function Appointments() {
             <img src={Image} alt="Imagem de um homem sendo vacinado" />
           </div>
           <div className="search-results">
+            <div className="results">
+              <p style={{fontWeight: "bold"}}>Horário</p>
+              <p style={{fontWeight: "bold", width: "250px"}}>Nome</p>
+              <p style={{fontWeight: "bold"}}>Situação</p>
+            </div>
             {response &&
               response.map((attendance, key) => (
                 <div key={key} className="results">
-                  <p>{attendance.time}</p>
+                  <p>{attendance.time}h</p>
                   <p style={{width: "250px"}}>{attendance.name}</p>
                   {attendance.vaccinated ?
                     <p className="vaccinated">Vacinou!</p>

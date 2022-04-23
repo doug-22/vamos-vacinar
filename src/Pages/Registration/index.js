@@ -1,29 +1,23 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import Axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Api from "../../Services/api";
+import utilFunctions from "../../Utils/util.functions";
 
 import "./styles.css";
 import Image from "../../Assets/Image2.jpg";
 import imageSuccess from "../../Assets/success.jpg";
 import imageNotSuccess from "../../Assets/not-success.jpg";
 
-import Header from "../../Components/Header";
-import NavigationTabs from "../../Components/NavigationTabs";
 import Form from "../../Components/Form";
 
 export default function Registration() {
 
-  const currentLocation = useLocation();
   const navigate = useNavigate();
   const [registered, setRegistered] = useState();
-
-  const handleSubmit = (values) => {
-    Axios.post("http://localhost:8080/api/cadastro", values)
-    .then((response) => {
-      setRegistered(!response.data.error);
-    }).catch((error) => {
-      setRegistered(!error.response.data.error);
-    });
+  
+  const handleSubmit = async (values) => {
+    let response = await Api.postRegister(values);
+    setRegistered(response);
   }
   const initialValues = {
     name: "",
@@ -32,22 +26,22 @@ export default function Registration() {
     time: "",
     vaccinated: false
   };
-
+  
   const redirectAppointmentsPage = () => {
-    navigate("/agendamentos")
-    setRegistered(registered)
+    navigate("/agendamentos");
+    setRegistered(registered);
   }
   if(registered) {
     setTimeout(redirectAppointmentsPage, 1000*1.5);
   }
 
+  utilFunctions.documentTitle(" | Cadastro");
+  
   return (
     <>
-      <Header />
-      <NavigationTabs location={currentLocation.pathname} />
       <div className="box-form">
         <img src={Image} alt="Imagem homem adulto sendo vacinado"/>
-        <div>
+        <div className="content-form">
           <Form handleSubmit={handleSubmit} initialValues={initialValues} />
           {registered &&
             <div className="box-result-appointment">

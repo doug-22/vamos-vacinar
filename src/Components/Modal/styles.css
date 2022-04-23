@@ -1,4 +1,12 @@
 /*modal*/
+.modal,
+.container-modal,
+.modal-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal {
   width: 100%;
   height: 100vh;
@@ -7,21 +15,14 @@
   left: 0;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.6);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container-modal {
   width: 50%;
-  height: 60%;
+  height: 70%;
   background-color: var(--white);
 
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
 }
 
@@ -35,10 +36,8 @@
   right: calc(-50% + 64px);
   top: 10px;
   cursor: pointer;
-  display: flex;
+
   position: relative;
-  align-items: center;
-  justify-content: center;
   z-index: 10;
   transition: all ease 0.5s;
 }
@@ -60,11 +59,21 @@
 }
 
 /* modal vaccination */
-.container-filters {
+.container-vaccination,
+.content-result-search {
   display: flex;
+}
+.container-vaccination {
+  width: 90%;
+  height: 80%;
+
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+.container-vaccination h1 {
+  margin-bottom: 20px;
 }
 
 .content-input-vaccination {
@@ -72,51 +81,98 @@
   text-align: right;
 }
 
-.content-result-search {
-  display: flex;
+.content-titles,
+.content-person {
+  height: 156px;
+  margin-top: 10px;
 }
 
 .content-titles {
-  height: 156px;
   font-weight: bold;
   text-align: right;
   padding-right: 10px;
 }
 
 .content-person {
-  height: 156px;
+  width: max-content;
 }
 
-.button-disabled {
-  background-color: var(--gray);
+.vaccinated-modal,
+.not-vaccinated-modal {
+  font-weight: bold;
 }
 
+.vaccinated-modal {
+  color: var(--green);
+}
+
+.not-vaccinated-modal {
+  color: var(--red);
+}
+
+.button-disabled, 
 .button-disabled:hover {
   background-color: var(--gray);
 }
 
 /* modal manage */
+.container-manage,
+.content-input-manage {
+  display: flex;
+}
+
 .container-manage {
   width: 80%;
   height: 80%;
-  display: flex;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.content-input {
+.container-manage h1 {
+  margin-bottom: 20px;
+}
+
+.content-input-manage {
+  gap: 10px;
   margin-bottom: 50px;
 }
 
-.message-deleted {
-  margin-top: 10px;
-  font-weight: bold;
-  color: var(--gree);
-}
-
+.message-deleted,
 .message-not-deleted {
   margin-top: 10px;
   font-weight: bold;
+}
+
+.message-deleted {
+  color: var(--green);
+}
+
+.message-not-deleted {
   color: var(--red);
+}
+
+@media (max-width: 900px) {
+  .container-modal {
+    width: 95%;
+  }
+
+  .content-titles {
+    height: max-content;
+  }
+
+  .container-manage {
+    width: 90%;
+  }
+
+  .content-person p:nth-child(2){
+    display: flex;
+    align-items: center;
+    height: 45px;
+  }
+
+  .content-person button {
+    margin-top: 20px !important;
+  }
 }

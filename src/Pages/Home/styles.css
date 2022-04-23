@@ -22,3 +22,17 @@
     text-align: justify;
     margin-bottom: 50px;
 }
+
+@media (max-width: 900px) {
+    .container-menu {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .container-menu img {
+        width: 80%;
+    }
+    .container-info {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+}

@@ -2,37 +2,20 @@ import React, { useState } from "react";
 import Api from "../../Services/api";
 import { Formik, Form as FormFormik, Field } from "formik";
 import DatePicker from "react-datepicker";
+import utilFunctions from "../../Utils/util.functions";
 
 import "react-datepicker/dist/react-datepicker.css";
-
 
 export default function ModalManage() {
 
   const [message, setMessage] = useState();
 
-  const getDateYesterday = () => {
-    let currentDate = new Date();
-    let tomorrowDate = new Date();
-    tomorrowDate.setDate(currentDate.getDate() - 1)
-    return tomorrowDate;
-  }
-
   const handleDeleteDate = async (date) => {
-    let day = "" + date.dateDelete.getDate();
-    let month = "" + (date.dateDelete.getMonth() + 1);
-    let year = date.dateDelete.getFullYear();
-
-    if(day.length < 2) day = "0" + day;
-    if(month.length < 2) month = "0" + month;
-
-    let dateDelete = [day, month, year].join("-");
-    await Api.delete(`/api/deletar_agendamentos?dia=${dateDelete}`)
-      .then(response => {
-        setMessage(!response.data.error)
-      })
-      .catch(error => {
-        setMessage(!error.response.data.error)
-      })
+    let dateDelete = utilFunctions.formatDate(date.dateDelete);
+    if(window.confirm(`Você tem certeza que deseja apagar os agendamentos do dia ${dateDelete} do banco de dados?`)){
+      let response = await Api.deleteAppointments(dateDelete);
+      setMessage(response);
+    }
 
   }
 
@@ -42,12 +25,13 @@ export default function ModalManage() {
 
   return (
     <div className="container-manage">
+      <h1>Deletar agendamentos</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleDeleteDate}
       >
         <FormFormik>
-          <div className="content-input">
+          <div className="content-input-manage">
             <p>Selecione a data:</p>
             <Field name="dateDelete">
               {({form, field}) => {
@@ -60,7 +44,7 @@ export default function ModalManage() {
                     onChange={date => setFieldValue("dateDelete", date)}
                     placeholderText="Selecione o dia"
                     dateFormat="dd/MM/yyyy"
-                    maxDate={getDateYesterday()}
+                    maxDate={utilFunctions.getDateYesterday()}
                     />
                 );
               }}
