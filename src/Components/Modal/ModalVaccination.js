@@ -8,8 +8,8 @@ export default function ModalVaccination({listDates}) {
   const [response, setResponse] = useState([]);
 
   const handleResults = async (dataSelect) => {
-    let list = await Api.get(`/api/agendamento?dia=${dataSelect.target.value}`)
-    setResponse(list.data.attendanceData);
+    let list = await Api.getListAppointments(dataSelect.target.value);
+    setResponse(list.attendanceData);
   }
 
   const handleSelected = (data) => {
@@ -22,11 +22,8 @@ export default function ModalVaccination({listDates}) {
   }
 
   const handleVaccination = async (id) => {
-    await Api.put(`/api/editar/${id}`, {
-      vaccinated: true
-    }).then((response) => {
-      setSelected(response.data);
-    });
+    let response = await Api.editVaccination(id);
+    setSelected(response);
   }
 
   const initialValues = {

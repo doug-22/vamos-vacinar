@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Axios from "axios";
+import Api from "../../Services/api";
 import { documentTitle } from "../../Utils/documentTitle";
 
 import "./styles.css";
@@ -17,13 +17,9 @@ export default function Registration() {
   const navigate = useNavigate();
   const [registered, setRegistered] = useState();
 
-  const handleSubmit = (values) => {
-    Axios.post("http://localhost:8080/api/cadastro", values)
-    .then((response) => {
-      setRegistered(!response.data.error);
-    }).catch((error) => {
-      setRegistered(!error.response.data.error);
-    });
+  const handleSubmit = async (values) => {
+    let response = await Api.postRegister(values)
+    setRegistered(response);
   }
   const initialValues = {
     name: "",

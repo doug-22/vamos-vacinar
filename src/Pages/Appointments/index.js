@@ -15,16 +15,16 @@ export default function Appointments() {
 
   useEffect(() => {
     const loadApi = async () => {
-      let list = await Api.get("/api/agendamento");
-      setListDates(list.data.dates);
+      let list = await Api.getListAppointments();
+      setListDates(list)
     }
 
     loadApi();
   }, [])
 
   const handleResults = async (dataSelect) => {
-    let list = await Api.get(`/api/agendamento?dia=${dataSelect.date}`)
-    setResponse(list.data.attendanceData);
+    let list = await Api.getListAppointments(dataSelect.date);
+    setResponse(list.attendanceData);
   }
 
   const initialValues = {

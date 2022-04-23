@@ -18,8 +18,8 @@ export default function Management() {
 
   useEffect(() => {
     const loadApi = async () => {
-      let list = await Api.get("/api/agendamento");
-      setListDates(list.data.dates);
+      let list = await Api.getListAppointments();
+      setListDates(list)
     }
 
     loadApi();

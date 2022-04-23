@@ -23,8 +23,8 @@ export default function Form({handleSubmit, initialValues}) {
     if(month.length < 2) month = "0" + month;
 
     let date = [day, month, year].join("-");
-    let list = await Api.get(`/api/agendamento?dia=${date}`);
-    setHours(filterHours(list.data.attendanceTimes));
+    let list = await Api.getListAppointments(date);
+    setHours(filterHours(list.attendanceTimes))
   }
 
 
