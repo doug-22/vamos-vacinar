@@ -14,7 +14,7 @@ export default function Tabs() {
         <Link to="/agendamentos" className={location.pathname === "/agendamentos" ? "navigation-link-active" : "navigation-link"}>Agendamentos</Link>
       </div>
       {(location.pathname === "/agendamentos" || location.pathname === "/agendamentos/gerenciar") &&
-        <Link to="/agendamentos/gerenciar" className={location.pathname === "/agendamentos/gerenciar" ? "navigation-link-active" : "navigation-link"}>Gerenciar agendamentos</Link>
+        <Link to="/agendamentos/gerenciar" className={location.pathname === "/agendamentos/gerenciar" ? "navigation-link-active" : "navigation-link"}>Gerenciar</Link>
       }
     </div>
   );
