@@ -42,12 +42,13 @@ export default function ModalManage() {
 
   return (
     <div className="container-manage">
+      <h1>Deletar agendamentos</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleDeleteDate}
       >
         <FormFormik>
-          <div className="content-input">
+          <div className="content-input-manage">
             <p>Selecione a data:</p>
             <Field name="dateDelete">
               {({form, field}) => {

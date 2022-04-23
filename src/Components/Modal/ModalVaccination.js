@@ -35,7 +35,8 @@ export default function ModalVaccination({listDates}) {
   }
 
   return (
-    <>
+    <div className="container-vaccination">
+      <h1>Cadastrar vacinação</h1>
       <div className="container-filters">
         <Formik
           initialValues={initialValues}
@@ -78,7 +79,7 @@ export default function ModalVaccination({listDates}) {
           <p>Data de Nascimento: </p>
           <p>Situação: </p>
           {selected && 
-            <p style={{marginTop: "20px"}}>Essa pessoa vacinou?<br/>(Clique para cadastrar a vacinação) </p>
+            <p style={{marginTop: "20px"}}>Essa pessoa vacinou?</p>
           }
         </div>
         {selected &&
@@ -88,19 +89,19 @@ export default function ModalVaccination({listDates}) {
               <p>{selected.birthDate}</p>
               {selected.vaccinated ?
                 <>
-                  <p className="vaccinated">Vacinado</p>
-                  <button style={{marginTop: "18px"}} className="button button-disabled" onClick={() => handleVaccination(selected.id)} disabled={true}>Sim</button>
+                  <p className="vaccinated-modal">Vacinado</p>
+                  <button style={{marginTop: "5px"}} className="button button-disabled" onClick={() => handleVaccination(selected.id)} disabled={true}>Sim</button>
                 </>
                 :
                 <>
-                <p className="not-vaccinated">Não vacinado</p>
-                <button style={{marginTop: "18px"}} className="button" onClick={() => handleVaccination(selected.id)}>Sim</button>
+                <p className="not-vaccinated-modal">Não vacinado</p>
+                <button style={{marginTop: "5px"}} className="button" onClick={() => handleVaccination(selected.id)}>Sim</button>
                 </>
               }
             </div>
           </>
         }
       </div>
-    </>
+    </div>
   );
 }
