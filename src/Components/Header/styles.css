@@ -1,9 +1,9 @@
 header {
-    height: 65px;
-    background-color: var(--header);
+  height: 65px;
+  background-color: var(--header);
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header-logo {
@@ -13,4 +13,11 @@ header {
 
 .header-logo img {
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .header-logo {
+    width: 200px;
+    margin-left: 20px;
+  }
 }
