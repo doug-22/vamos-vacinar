@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://doug-22.github.io/assets/assets/projetos/Logo.png" alt="Logo">
   <h3 align="center">Vamos Vacinar</h3>
+</p>
 
 <!-- TABLE OF CONTENTS -->
 # :card_file_box: Tabela de Conteúdos
@@ -40,11 +41,7 @@ Você pode encontrar o layout criado por mim mesmo do projeto no link abaixo (A 
 * [Yup](https://www.npmjs.com/package/yup)
 * [React Router Dom](https://reactrouter.com/docs/en/v6/getting-started/overview)
 * [Yarn](https://yarnpkg.com)
-* [Express](https://expressjs.com)
 * [Axios](https://www.npmjs.com/package/axios)
-* [Cors](https://www.npmjs.com/package/cors)
-* [Jest](https://jestjs.io/pt-BR/)
-* [Supertest](https://www.npmjs.com/package/supertest)
 * [Testing Library](https://testing-library.com/docs/)
 
 ### :sparkles: Recursos
