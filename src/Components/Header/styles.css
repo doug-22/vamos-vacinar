@@ -1,0 +1,23 @@
+header {
+  height: 65px;
+  background-color: var(--header);
+
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width: 230px;
+  margin-left: 50px;
+}
+
+.header-logo img {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .header-logo {
+    width: 200px;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,38 @@
+.container-menu {
+    width: 100%;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-info {
+    width: 30%;
+}
+
+.container-menu img {
+    width: 576px;
+}
+
+.container-info img {
+    width: 250px;
+}
+.container-info p {
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 900px) {
+    .container-menu {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .container-menu img {
+        width: 80%;
+    }
+    .container-info {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+}
