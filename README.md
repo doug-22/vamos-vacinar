@@ -18,7 +18,7 @@
 
 ## :book: Sobre o Projeto
 
-Vamos Vacinar é um projeto criado como parte da avaliação final do Programa Trainee [Pitang](https://www.pitang.com/) 2022 em conjunto com a [Qualiti Learning Experience.](https://qualiti.app.toolzz.com.br/qualiti) O objetivo do projeto é criar um sistema de agendamento de vacinação.
+Vamos Vacinar é um projeto criado como parte da avaliação final do Programa Trainee [Pitang](https://www.pitang.com/) 2022 em conjunto com a [Qualiti Learning Experience.](https://qualiti.app.toolzz.com.br/qualiti) O objetivo do projeto é criar um sistema de agendamento de vacinação. É possível acessar o sistema em produção clicando [aqui](https://vamosvacinar.netlify.app/).
 
 <p align="center">
   <img src="https://doug-22.github.io/assets/assets/projetos/vamos-vacinar.png" width="50%" alt="Landing page" /> 
@@ -77,9 +77,13 @@ $ yarn install
 
 ### :arrow_forward: Rodando o Front-end
 
-Rode o seguinte comando para ver a aplicação:
+Rode o seguinte comando para ver a aplicação (Certifique-se de estar na branch correta `main` ou `develop` para poder rodar o projeto de maneira local, a branch denominada `branch/production` está como branch de produção, no qual aponta para o back-end que também está em produção, ao invés do local, uma vez que o projeto ainda vai passar por uma avaliação):
 
 ```bash
+#Para navegar entre as branches basta rodar o comando:
+git checkout nome_da_branch
+
+#Para rodar o projeto
 yarn start
 ```
 
