@@ -16,7 +16,7 @@ export default {
     }
   },
   postRegister: async (values) => {
-    let response = await api.post("http://localhost:8080/api/cadastro", values)
+    let response = await api.post("/api/cadastro", values)
       .then((res) => {
         return !res.data.error;
       }).catch((error) => {
