@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const api = Axios.create({
-  baseURL: "http://localhost:8080"
+  baseURL: "https://vamos-vacinar-backend.herokuapp.com/"
 });
 
 // eslint-disable-next-line
@@ -16,7 +16,7 @@ export default {
     }
   },
   postRegister: async (values) => {
-    let response = await api.post("http://localhost:8080/api/cadastro", values)
+    let response = await api.post("/api/cadastro", values)
       .then((res) => {
         return !res.data.error;
       }).catch((error) => {
