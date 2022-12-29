@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const api = Axios.create({
-  baseURL: "https://vamos-vacinar-backend.herokuapp.com/"
+  baseURL: "https://vamos-vacinar-backend.vercel.app/"
 });
 
 // eslint-disable-next-line
